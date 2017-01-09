@@ -6,38 +6,38 @@
 
 // jQuery for page scrolling feature - requires jQuery Easing plugin
 
-var eventList = []
-
-$.get("http://localhost:3000/events", function(data){
-  return data
-}).then(function(data){
-  eventList = data;
-  populateList(eventList)
-})
-
-function populateList(list){
-  for (var i = 0; i < list.length; i++) {
-    $(".event-list").append("<li>"+list[i].date+"  "+list[i].name+"</li>")
-  }
-}
-
-$(".event-list").append("<h1>This is the Event List</h1>");
-
-//submit button
-$(".eventButton").click(function(){
-  var date = $("#eventDate").val()
-  var name = $("#eventName").val()
-  console.log(date+" "+name);
-  var newEvent = {
-    date:date,
-    name:name
-  }
-
-  $.post("http://localhost:3000/newEvent", newEvent)
-    .done(function(data){
-    populateList(data)
-  })
-})
+// var eventList = []
+//
+// $.get("http://localhost:3000/events", function(data){
+//   return data
+// }).then(function(data){
+//   eventList = data;
+//   populateList(eventList)
+// })
+//
+// function populateList(list){
+//   for (var i = 0; i < list.length; i++) {
+//     $(".event-list").append("<li>"+list[i].date+"  "+list[i].name+"</li>")
+//   }
+// }
+//
+// $(".event-list").append("<h1>This is the Event List</h1>");
+//
+// //submit button
+// $(".eventButton").click(function(){
+//   var date = $("#eventDate").val()
+//   var name = $("#eventName").val()
+//   console.log(date+" "+name);
+//   var newEvent = {
+//     date:date,
+//     name:name
+//   }
+//
+//   $.post("http://localhost:3000/newEvent", newEvent)
+//     .done(function(data){
+//     populateList(data)
+//   })
+// })
 
 
 
