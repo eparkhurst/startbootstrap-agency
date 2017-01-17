@@ -62,3 +62,13 @@ $('body').scrollspy({
 $('.navbar-collapse ul li a:not(.dropdown-toggle)').click(function() {
     $('.navbar-toggle:visible').click();
 });
+
+
+
+$.get("img/portfolio",function(data){
+    $(data).find("a").attr("href", function (i, val) {
+        if( val.match(/\.(jpe?g|png|gif|JPG)$/) ) {
+            $(".port").append( "<img src='"+ val +"'>" );
+        }
+    });
+})
