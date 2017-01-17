@@ -65,7 +65,7 @@ $('.navbar-collapse ul li a:not(.dropdown-toggle)').click(function() {
 
 
 
-$.get("img/portfolio",function(data){
+$.get("./img/portfolio",function(data){
     $(data).find("a").attr("href", function (i, val) {
         if( val.match(/\.(jpe?g|png|gif|JPG)$/) ) {
             $(".port").append( "<img src='"+ val +"'>" );
