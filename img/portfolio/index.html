@@ -1,0 +1,17 @@
+<html>
+<body>
+    <div id='fileNames'></div>
+</body>
+<script src="../js/jquery.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function ()
+    {
+        $.get(".", function(data)
+        {
+          console.log(data);
+            // $("#fileNames").append(data);
+        });
+    })
+</script>
+</html>
